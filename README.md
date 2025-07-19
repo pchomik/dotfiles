@@ -188,7 +188,7 @@ sudo dpkg -i --force-overwrite nvim-linux-x86_64.deb
 Now, let's apply the dotfiles configuration.
 
 ```shell
-cd $DOTFILES_ROOT/dotfiles
+cd dotfiles
 stow --ignore="README.md" --ignore="imgs" -t ~/ .
 ```
 
