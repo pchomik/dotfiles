@@ -224,4 +224,4 @@ chsh -s $(which zsh)
 
 <br>
 
-Enjoy your beautifully configured and efficient terminal! 🎉
+<div align="center">Enjoy your beautifully configured and efficient terminal! 🎉</div>
