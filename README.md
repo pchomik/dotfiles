@@ -71,22 +71,22 @@ Here are some screenshots showcasing the configured tools in action.
 
 <details>
 <summary>Zsh Prompt (Starship)</summary>
-<img src="images/zsh.png" width="600px">
+<img src="examples/zsh.png" width="600px">
 </details>
 
 <details>
 <summary>Neovim Editor</summary>
-<img src="images/nvim.png" width="600px">
+<img src="examples/nvim.png" width="600px">
 </details>
 
 <details>
 <summary>Fuzzy Finder (FZF)</summary>
-<img src="images/fzf.png" width="600px">
+<img src="examples/fzf.png" width="600px">
 </details>
 
 <details>
 <summary>Modern `ls` (Eza)</summary>
-<img src="images/eza.png" width="600px">
+<img src="examples/eza.png" width="600px">
 </details>
 
 ## ⚙️ Installation Steps
@@ -189,7 +189,7 @@ Now, let's apply the dotfiles configuration.
 
 ```shell
 cd dotfiles
-stow --ignore="README.md" --ignore="images" -t ~/ .
+stow --ignore="README.md" --ignore="examples" -t ~/ .
 ```
 
 **Note:** If `stow` reports an error, it might be because a file that needs to be symlinked already exists in your home directory. In this case, you should **backup** the existing file(s) and then run the `stow` command again.
