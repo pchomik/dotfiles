@@ -189,7 +189,7 @@ Now, let's apply the dotfiles configuration.
 
 ```shell
 cd $DOTFILES_ROOT/dotfiles
-stow --ignore=README.md -t ~/ .
+stow --ignore="README.md" --ignore="imgs" -t ~/ .
 ```
 
 **Note:** If `stow` reports an error, it might be because a file that needs to be symlinked already exists in your home directory. In this case, you should **backup** the existing file(s) and then run the `stow` command again.
