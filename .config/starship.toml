@@ -1,0 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+format = """$all$fill$nodejs$python$time$line_break$character"""
+[fill]
+symbol = ' '
+[directory]
+truncate_to_repo = false
+[sudo]
+disabled = false
+[kubernetes]
+disabled = false
+symbol = '☸  '
+style = 'green bold'
+detect_env_vars = ["KUBECONFIG"]
+[time]
+disabled = false
+[python]
+style = 'purple bold'

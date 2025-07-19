@@ -1,0 +1,76 @@
+[include]
+    path = ~/.gitcustom.inc
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    lg = log --oneline --graph --decorate
+    lgg = log --all --decorate=short --pretty=format:'%C(yellow)%h%C(reset) %s %C(auto)%d%C(reset)'
+    br = branch
+    w = show
+    dd = difftool --no-symlinks -d
+    bs = merge-base master HEAD
+    rh = reset --hard
+
+[core]
+    editor = code --wait
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
+
+[merge]
+    tool = winmerge
+
+[mergetool "winmerge"]
+    name = WinMerge
+    trustExitCode = true
+    cmd = "/mnt/c/Program\\ Files/WinMerge/WinMergeU.exe" -u -e -fm -wl -dl "Local" -wr -dr "Remote" $(wslpath -aw $LOCAL) $(wslpath -aw $MERGED) $(wslpath -aw $REMOTE)
+
+[diff]
+    tool = winmerge
+
+[difftool "winmerge"]
+    name = WinMerge
+    trustExitCode = true
+    cmd = "/mnt/c/Program\\ Files/WinMerge/WinMergeU.exe" -u -e  $(wslpath -aw $LOCAL) $(wslpath -aw $REMOTE)
+
+[safe]
+    directory = *
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[credential "https://github.com"]
+    helper = 
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !/usr/bin/gh auth git-credential
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
