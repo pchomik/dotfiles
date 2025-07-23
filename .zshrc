@@ -7,7 +7,15 @@ if [ -d ~/.config/zsh ]; then
   done
 fi
 
-# Load functions
+call_if_exists() {
+    local func_name="$1"
+
+    if type "$func_name" 1>/dev/null 2>/dev/null; then
+        "$func_name"
+    fi
+}
+
+call_if_exists set_proxy
 set_path
 load_options
 load_zinit
