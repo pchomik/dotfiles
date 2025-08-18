@@ -2,7 +2,7 @@ function set_aliases() {
     alias noproxy='unset https_proxy http_proxy no_proxy'
     alias check-net='curl -vL https://wp.pl'
     alias ls='ls --color=auto'
-    alias cat='bat'
+    alias cat='bat -p'
     alias ls='eza --icons=auto'
     alias ll='ls -l'
     alias tl='tldr'
