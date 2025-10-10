@@ -8,12 +8,12 @@ return {
     opts = {
         spec = {
             -- Bookmarks (b)
-            { "<leader>b", group = "Bookmarks..." },
-            { "<leader>ba", "<cmd>delmarks!<CR>", desc = "Clear All Bookmarks" },
-            { "<leader>bt", "mm", desc = "Toggle Bookmark" },
-            { "<leader>bc", "<cmd>delmarks<CR>", desc = "Clear Bookmarks in file" },
-            { "<leader>bb", "<cmd>marks<CR>", desc = "List all bookmarks" },
-            { "<leader>bs", "<cmd>Telescope marks<CR>", desc = "Show bookmarks" },
+            -- { "<leader>b", group = "Bookmarks..." },
+            -- { "<leader>ba", "<cmd>delmarks!<CR>", desc = "Clear All Bookmarks" },
+            -- { "<leader>bt", "mm", desc = "Toggle Bookmark" },
+            -- { "<leader>bc", "<cmd>delmarks<CR>", desc = "Clear Bookmarks in file" },
+            -- { "<leader>bb", "<cmd>marks<CR>", desc = "List all bookmarks" },
+            -- { "<leader>bs", "<cmd>Telescope marks<CR>", desc = "Show bookmarks" },
 
             -- Close (c)
             { "<leader>c", group = "Close..." },
@@ -85,7 +85,7 @@ return {
             { "<leader>o", group = "Open..." },
             { "<leader>oo", "<cmd>e<CR>", desc = "Open" },
             { "<leader>or", "<cmd>Telescope oldfiles<CR>", desc = "Open recent" },
-            { "<leader>op", "<cmd>cd ~/projects<CR><cmd>Telescope find_files<CR>", desc = "Open project" },
+            { "<leader>op", "<cmd>cd ~/repos<CR><cmd>Telescope find_files<CR>", desc = "Open project" },
 
             -- Split/Symbol (s)
             { "<leader>s", group = "Symbols..." },
@@ -101,24 +101,24 @@ return {
             { "<leader>tf", "<cmd>tabnew %<CR>", desc = "Open current buffer in new tab" },
 
             -- Movement (m)
-            { "<leader>m", group = "Movement..." },
+            -- { "<leader>m", group = "Movement..." },
             -- Line movement
-            { "<leader>md", "<A-down>", desc = "Move line down", mode = "n" },
-            { "<leader>md", "<Esc>:m+<CR>==gi", desc = "Move line down", mode = "i" },
-            { "<leader>md", ":m'>+<CR>gv=gv", desc = "Move line down", mode = "v" },
-            { "<leader>mu", "<A-up>", desc = "Move line up", mode = "n" },
-            { "<leader>mu", "<Esc>:m-2<CR>==gi", desc = "Move line up", mode = "i" },
-            { "<leader>mu", ":m-2<CR>gv=gv", desc = "Move line up", mode = "v" },
+            -- { "<leader>md", "<A-down>", desc = "Move line down", mode = "n" },
+            -- { "<leader>md", "<Esc>:m+<CR>==gi", desc = "Move line down", mode = "i" },
+            -- { "<leader>md", ":m'>+<CR>gv=gv", desc = "Move line down", mode = "v" },
+            -- { "<leader>mu", "<A-up>", desc = "Move line up", mode = "n" },
+            -- { "<leader>mu", "<Esc>:m-2<CR>==gi", desc = "Move line up", mode = "i" },
+            -- { "<leader>mu", ":m-2<CR>gv=gv", desc = "Move line up", mode = "v" },
             -- Word movement
-            { "<leader>mf", "<C-right>", desc = "Move word forward", mode = "n" },
-            { "<leader>mf", "<C-o>:call jump_word_e()<CR>", desc = "Move word forward", mode = "i" },
-            { "<leader>mb", "<C-left>", desc = "Move word backward", mode = "n" },
-            { "<leader>mb", "<C-o>:call jump_word_b()<CR>", desc = "Move word backward", mode = "i" },
+            -- { "<leader>mf", "<C-right>", desc = "Move word forward", mode = "n" },
+            -- { "<leader>mf", "<C-o>:call jump_word_e()<CR>", desc = "Move word forward", mode = "i" },
+            -- { "<leader>mb", "<C-left>", desc = "Move word backward", mode = "n" },
+            -- { "<leader>mb", "<C-o>:call jump_word_b()<CR>", desc = "Move word backward", mode = "i" },
             -- Panel navigation
-            { "<leader>mh", "<C-Space><left>", desc = "Change to panel left" },
-            { "<leader>ml", "<C-Space><right>", desc = "Change to panel right" },
-            { "<leader>mk", "<C-Space><up>", desc = "Change to panel up" },
-            { "<leader>mj", "<C-Space><down>", desc = "Change to panel down" },
+            -- { "<leader>mh", "<C-Space><left>", desc = "Change to panel left" },
+            -- { "<leader>ml", "<C-Space><right>", desc = "Change to panel right" },
+            -- { "<leader>mk", "<C-Space><up>", desc = "Change to panel up" },
+            -- { "<leader>mj", "<C-Space><down>", desc = "Change to panel down" },
 
             -- Problem Navigation
             { "[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Previous problem in the file" },
@@ -185,7 +185,6 @@ return {
 
             -- Miscellaneous (z)
             { "<leader>z", group = "Miscellaneous..." },
-            { "jk", "<ESC>", desc = "Exit insert mode", mode = "i" },
             { "<leader>zh", ":nohl<CR>", desc = "Clear search highlights" },
             { "<leader>z+", "<C-a>", desc = "Increment number" },
             { "<leader>z-", "<C-x>", desc = "Decrement number" },
