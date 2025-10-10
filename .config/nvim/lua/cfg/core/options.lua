@@ -41,8 +41,8 @@ if vim.fn.has 'wsl' == 1 then
         paste = {
             -- The -NoProfile and -Command are important.
             -- Use -Raw to prevent potential issues with multi-line pastes being treated as an array.
-            ['+'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | Out-File -FilePath - -Encoding UTF8NoBOM',
-            ['*'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | Out-File -FilePath - -Encoding UTF8NoBOM',
+            ['+'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | Out-File -FilePath - -Encoding UTF8',
+            ['*'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | Out-File -FilePath - -Encoding UTF8',
         },
         cache_enabled = 0,
     }
@@ -125,5 +125,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
-
 
