@@ -27,17 +27,14 @@ load_bun
 set_aliases
 set_keymap
 
-# bun completions
-[ -s "/home/chomicki/.bun/_bun" ] && source "/home/chomicki/.bun/_bun"
-
-# Automatyczna zmiana nazwy okna tmux na bieżący katalog
+# Automatically change tmux window name
+# Executed on every prompt display
 update_tmux_window_name() {
     if [ -n "$TMUX" ]; then
         tmux rename-window "${PWD##*/}"
     fi
 }
 
-# Wywołuj przy każdym wyświetleniu prompt
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_tmux_window_name
 
