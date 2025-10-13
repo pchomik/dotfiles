@@ -8,50 +8,23 @@ return {
   },
   config = function()
     -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    local keymap = vim.keymap -- for conciseness
+    -- The on_attach function is called for every LSP server that attaches to a buffer
+    local on_attach = function(client, bufnr)
+      -- NOTE: Remember that lua is a real programming language, and as such it is possible
+      -- to define small helper functions to reduce the verbosity of your keymaps.
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = "LSP: " .. desc
+        end
+        vim.keymap.set("n", keys, func, { buffer = bufnr, noremap = true, silent = true, desc = desc })
+      end
 
-    -- Single LSP attach handler to avoid duplicate diagnostics
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-      callback = function(ev)
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf, silent = true }
-
-      end,
-    })
-
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    -- Configure LSP servers using the new API
-    -- The offset encoding issue is likely due to multiple client instances
-    -- We'll configure all servers with consistent capabilities
-
-    -- Configure ruff with explicit offset encoding
-    require("lspconfig").ruff.setup({
-      capabilities = capabilities,
-    })
-
-    -- Configure pyright with explicit offset encoding
-    require("lspconfig").pyright.setup({
-      capabilities = capabilities,
-      settings = {
-        pyright = {
-          disableOrganizeImports = true,
-        },
-        python = {
-          analysis = {
-            ignore = { '*' },
-          },
-        },
-      },
-    })
+      -- Add your keymaps here, if you want them to be set only for buffers with an active LSP
+    end
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -59,4 +32,3 @@ return {
     end
   end,
 }
-

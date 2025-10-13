@@ -24,10 +24,49 @@ return {
       },
     })
 
+    -- The on_attach function is called for every LSP server that attaches to a buffer
+    local on_attach = function(client, bufnr)
+      -- NOTE: Remember that lua is a real programming language, and as such it is possible
+      -- to define small helper functions to reduce the verbosity of your keymaps.
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = "LSP: " .. desc
+        end
+        vim.keymap.set("n", keys, func, { buffer = bufnr, noremap = true, silent = true, desc = desc })
+      end
+
+      -- Add your keymaps here, if you want them to be set only for buffers with an active LSP
+    end
+
+    -- get the capabilities for cmp-nvim-lsp
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    -- Define server-specific settings
+    local servers = {
+      ruff_lsp = {},
+      pyright = {
+        settings = {
+          pyright = {
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              ignore = { "*" },
+            },
+          },
+        },
+      },
+      lua_ls = {
+        settings = {
+          Lua = { diagnostics = { globals = { "vim" } } },
+        },
+      },
+    }
+
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "ts_ls",
+        "tsserver",
         "gopls",
         "html",
         "cssls",
@@ -38,7 +77,17 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-        "ruff",
+        "ruff_lsp",
+      },
+      -- The handler that will be called for each server
+      handlers = {
+        function(server_name)
+          require("lspconfig")[server_name].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = servers[server_name] and servers[server_name].settings or {},
+          })
+        end,
       },
     })
 
