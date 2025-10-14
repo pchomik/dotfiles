@@ -1,5 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator",
+  commit = "c45243dc1f32ac6bcf6068e5300f3b2b237e576a",
   lazy = false,
   keys = {
     { "c-s-<Left>",  "<cmd><C-U>TmuxNavigateLeft<cr>"  },
