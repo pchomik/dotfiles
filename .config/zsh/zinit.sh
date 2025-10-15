@@ -22,14 +22,15 @@ function load_zinit() {
         id-as'fzf' \
         as"program" \
         from"gh-r" \
+        ver"v0.66.0" \
         nocompile \
         @junegunn/fzf
 
     zinit wait"0c" as"completion" light-mode lucid for \
-        id-as'fzf-completion' mv'fzf-completion -> _fzf' https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
+        id-as'fzf-completion' mv'fzf-completion -> _fzf' https://github.com/junegunn/fzf/blob/v0.66.0/shell/completion.zsh
 
     zinit wait"0d" lucid light-mode for \
-        id-as"fzf-keybindings" https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
+        id-as"fzf-keybindings" https://github.com/junegunn/fzf/blob/v0.66.0/shell/key-bindings.zsh
 
     # Load zoxide plugin
     zinit ice from"gh-r" at"v0.9.8" as"program" \
@@ -69,7 +70,6 @@ function load_zinit() {
         OMZL::git.zsh \
         OMZP::git \
         OMZP::sudo \
-        OMZP::archlinux \
         OMZP::aws \
         OMZP::kubectl \
         OMZP::kubectx \

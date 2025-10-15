@@ -3,18 +3,32 @@ return {
     commit = "b5311ab3ed9c846b585c0c15b7559be131ec4be9",
     event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-buffer", -- source for text in buffer
-        "hrsh7th/cmp-path", -- source for file system paths
+        {
+            "hrsh7th/cmp-buffer",
+            commit = "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
+        }, -- source for text in buffer
+        {
+            "hrsh7th/cmp-path",
+            commit = "c642487086dbd9a93160e1679a1327be111cbc25",
+        }, -- source for file system paths
         {
             "L3MON4D3/LuaSnip",
-            -- follow latest release.
-            version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+            version = "v2.4.0", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
             -- install jsregexp (optional!).
             build = "make install_jsregexp",
         },
-        "saadparwaiz1/cmp_luasnip", -- for autocompletion
-        "rafamadriz/friendly-snippets", -- useful snippets
-        "onsails/lspkind.nvim", -- vs-code like pictograms
+        {
+            "saadparwaiz1/cmp_luasnip",
+            commit = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
+        }, -- for autocompletion
+        {
+            "rafamadriz/friendly-snippets",
+            commit = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
+        }, -- useful snippets
+        {
+            "onsails/lspkind.nvim",
+            commit = "3ddd1b4edefa425fda5a9f95a4f25578727c0bb3",
+        }, -- vs-code like pictograms
     },
     config = function()
         local cmp = require("cmp")

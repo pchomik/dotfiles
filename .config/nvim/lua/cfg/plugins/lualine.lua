@@ -1,7 +1,10 @@
 return {
     "nvim-lualine/lualine.nvim",
     commit = "b8c23159c0161f4b89196f74ee3a6d02cdc3a955",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { 
+        "nvim-tree/nvim-web-devicons",
+        commit = "b8221e42cf7287c4dcde81f232f58d7b947c210d",
+    },
     config = function()
         local lualine = require("lualine")
         local lazy_status = require("lazy.status") -- to configure lazy pending updates count

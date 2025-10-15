@@ -3,9 +3,20 @@ return {
   tag = "v2.5.0",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    {
+      "hrsh7th/cmp-nvim-lsp",
+      commit = "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3",
+    },
+    { 
+      "antosha417/nvim-lsp-file-operations", 
+      config = true,
+      commit = "9744b738183a5adca0f916527922078a965515ed",
+    },
+    { 
+            "folke/neodev.nvim", 
+            opts = {},
+            tag = "v3.0.0",
+    },
   },
   config = function()
     -- import cmp-nvim-lsp plugin

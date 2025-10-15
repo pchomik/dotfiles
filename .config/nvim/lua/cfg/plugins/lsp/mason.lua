@@ -2,8 +2,14 @@ return {
   "williamboman/mason.nvim",
   tag = "v2.1.0",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    {
+            "williamboman/mason-lspconfig.nvim",
+            tag = "v2.1.0",
+    },
+    {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+            commit = "517ef5994ef9d6b738322664d5fdd948f0fdeb46",
+    },
   },
   config = function()
     -- import mason

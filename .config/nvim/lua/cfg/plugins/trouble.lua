@@ -3,7 +3,7 @@ return {
     tag = "v3.7.1",
     dependencies = { 
         {
-            "nvim-tree/nvim-web-devicons"}, 
+            "nvim-tree/nvim-web-devicons", 
             commit = "b8221e42cf7287c4dcde81f232f58d7b947c210d",
         },
         {
