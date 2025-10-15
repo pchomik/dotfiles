@@ -1,4 +1,4 @@
-fuction set_keymap() {
+function set_keymap() {
     bindkey '^p' history-search-backward
     bindkey '^n' history-search-forward
 
