@@ -1,7 +1,16 @@
 return {
     "folke/trouble.nvim",
     tag = "v3.7.1",
-    dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
+    dependencies = { 
+        {
+            "nvim-tree/nvim-web-devicons"}, 
+            commit = "b8221e42cf7287c4dcde81f232f58d7b947c210d",
+        },
+        {
+            "folke/todo-comments.nvim",
+            tag = "v1.4.0",
+        }
+    },
     opts = {
         focus = true,
     },

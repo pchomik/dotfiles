@@ -1,5 +1,6 @@
 return {
     'olimorris/onedarkpro.nvim',
+    tag = "v2.22.0",
     priority = 1000,
     config = function()
         ---@diagnostic disable-next-line: missing-fields

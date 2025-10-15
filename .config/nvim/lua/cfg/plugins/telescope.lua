@@ -2,10 +2,23 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = {
-        "nvim-lua/plenary.nvim",
-        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        "nvim-tree/nvim-web-devicons",
-        "folke/todo-comments.nvim",
+        {
+            "nvim-lua/plenary.nvim",
+            commit = "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+        },
+        { 
+            "nvim-telescope/telescope-fzf-native.nvim", 
+            build = "make",
+            commit = "1f08ed60cafc8f6168b72b80be2b2ea149813e55",
+        },
+        {
+            "nvim-tree/nvim-web-devicons",
+            commit = "b8221e42cf7287c4dcde81f232f58d7b947c210d",
+        },
+        {
+            "folke/todo-comments.nvim",
+            tag = "v1.4.0",
+        },
     },
     config = function()
         local telescope = require("telescope")
