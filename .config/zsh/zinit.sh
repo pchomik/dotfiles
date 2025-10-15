@@ -5,14 +5,14 @@ function load_zinit() {
     # Download Zinit, if it's not there yet
     if [ ! -d "$ZINIT_HOME" ]; then
         mkdir -p "$(dirname $ZINIT_HOME)"
-        git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+        git clone https://github.com/zdharma-continuum/zinit.git --branch "v3.14.0" "$ZINIT_HOME"
     fi
 
     # Source/Load zinit
     source "${ZINIT_HOME}/zinit.zsh"
 
     # Load starship prompt
-    zinit ice as"command" from"gh-r" \
+    zinit ice as"command" from"gh-r" as"v1.23.0" \
         atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
         atpull"%atclone" src"init.zsh"
     zinit light starship/starship
@@ -32,31 +32,39 @@ function load_zinit() {
         id-as"fzf-keybindings" https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 
     # Load zoxide plugin
-    zinit ice from"gh-r" as"program" \
+    zinit ice from"gh-r" at"v0.9.8" as"program" \
         atload'eval "$(zoxide init zsh --cmd cd)"'
     zinit light ajeetdsouza/zoxide
 
     # Load bat plugin
-    zinit ice as"program" from"gh-r" pick"bat*/bat" \
+    zinit ice as"program" from"gh-r" at"v0.25.0" pick"bat*/bat" \
         mv"bat*/autocomplete/bat.zsh -> _bat" \
         fpath"bat*/autocomplete"
     zinit light sharkdp/bat
 
     # Load eza plugin
-    zinit ice as"program" from"gh-r" \
+    zinit ice as"program" from"gh-r" at"v0.23.4" \
         pick"eza*/eza" \
         mv"eza*/completions/zsh/_eza -> _eza" \
         fpath"eza*/completions/zsh"
     zinit light eza-community/eza
 
     # Add other zsh plugins
-    zinit wait light-mode lucid for \
-        zsh-users/zsh-syntax-highlighting \
-        zsh-users/zsh-completions \
-        zsh-users/zsh-autosuggestions \
-        Aloxaf/fzf-tab
+    zinit ice at"0.8.0"
+    zinit light zsh-users/zsh-syntax-highlighting
+
+    zinit ice at"0.35.0"
+    zinit light zsh-users/zsh-completions
+
+    zinit ice at"v0.7.1"
+    zinit light zsh-users/zsh-autosuggestions
+
+    zinit ice at"v1.2.0"
+    zinit light Aloxaf/fzf-tab
 
     # Add in snippets
+    # Pin Oh My Zsh plugins to a specific tag
+    zinit ice at"d1c04d8a33f9127d03b69617c5367db5ceebc8a7"
     zinit wait light-mode lucid for \
         OMZL::git.zsh \
         OMZP::git \
@@ -67,6 +75,3 @@ function load_zinit() {
         OMZP::kubectx \
         OMZP::command-not-found
 }
-
-
-
