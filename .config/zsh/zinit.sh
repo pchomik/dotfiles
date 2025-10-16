@@ -33,14 +33,14 @@ function load_zinit() {
         id-as"fzf-keybindings" https://github.com/junegunn/fzf/blob/v0.66.0/shell/key-bindings.zsh
 
     # Load zoxide plugin
-    zinit ice from"gh-r" at"v0.9.8" as"program" \
+    zinit ice from"gh-r" ver"v0.9.8" as"program" \
         atload'eval "$(zoxide init zsh --cmd cd)"'
     zinit light ajeetdsouza/zoxide
 
     # Load bat plugin
-    zinit ice as"program" from"gh-r" at"v0.25.0" pick"bat*/bat" \
+    zinit ice as"program" from"gh-r" ver"v0.25.0" pick"bat*/bat" \
         mv"bat*/autocomplete/bat.zsh -> _bat" \
-        fpath"bat*/autocomplete"
+        fpath"bat*/autocomplete" # this should be atclone'...' but for now it works
     zinit light sharkdp/bat
 
     # Load eza plugin
@@ -51,16 +51,16 @@ function load_zinit() {
     zinit light eza-community/eza
 
     # Add other zsh plugins
-    zinit ice at"0.8.0"
+    zinit ice ver"0.8.0"
     zinit light zsh-users/zsh-syntax-highlighting
 
-    zinit ice at"0.35.0"
+    zinit ice ver"0.35.0"
     zinit light zsh-users/zsh-completions
 
-    zinit ice at"v0.7.1"
+    zinit ice ver"v0.7.1"
     zinit light zsh-users/zsh-autosuggestions
 
-    zinit ice at"v1.2.0"
+    zinit ice ver"v1.2.0"
     zinit light Aloxaf/fzf-tab
 
     # Add in snippets
