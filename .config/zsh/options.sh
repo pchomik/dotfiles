@@ -1,6 +1,12 @@
 function load_options() {
-    # Load completions
-    autoload -Uz compinit && compinit
+    # Load completions, but only run the expensive validation when the cache is stale.
+    autoload -Uz compinit
+    local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+    if [[ ! -f "$zcompdump" || -n "$zcompdump"(#qN.mh+24) ]]; then
+        compinit
+    else
+        compinit -C
+    fi
 
     # History
     HISTFILE=~/.zsh_history
@@ -17,4 +23,3 @@ function load_options() {
 
     export BAT_THEME="Monokai Extended Origin"
 }
-

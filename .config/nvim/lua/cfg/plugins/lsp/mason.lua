@@ -74,7 +74,6 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "tsserver",
-        "gopls",
         "html",
         "cssls",
         "tailwindcss",
@@ -83,8 +82,8 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "pyright",
-        "ruff_lsp",
+        "rust-analyzer",
+        "ty",
       },
       -- The handler that will be called for each server
       handlers = {
@@ -103,8 +102,6 @@ return {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "eslint_d",
-        "isort",
-        "black",
         "ruff"
       },
     })

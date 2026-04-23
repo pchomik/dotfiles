@@ -20,10 +20,9 @@ set_path
 load_options
 load_zinit
 load_zstyle
-load_go
 load_pyenv
 load_nvm
-load_bun
+load_rust
 set_aliases
 set_keymap
 
