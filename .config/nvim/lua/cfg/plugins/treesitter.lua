@@ -1,6 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    commit = "42fc28ba918343ebfd5565147a42a26580579482",
+    commit = "4916d6592ede8c07973490d9322f187e07dfefac",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     dependencies = {

@@ -1,13 +1,13 @@
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    tag = "v0.2.1",
     dependencies = {
         {
             "nvim-lua/plenary.nvim",
             commit = "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
         },
-        { 
-            "nvim-telescope/telescope-fzf-native.nvim", 
+        {
+            "nvim-telescope/telescope-fzf-native.nvim",
             build = "make",
             commit = "1f08ed60cafc8f6168b72b80be2b2ea149813e55",
         },
