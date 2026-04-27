@@ -7,13 +7,13 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       commit = "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3",
     },
-    { 
-      "antosha417/nvim-lsp-file-operations", 
+    {
+      "antosha417/nvim-lsp-file-operations",
       config = true,
       commit = "9744b738183a5adca0f916527922078a965515ed",
     },
-    { 
-            "folke/neodev.nvim", 
+    {
+            "folke/neodev.nvim",
             opts = {},
             tag = "v3.0.0",
     },
@@ -37,10 +37,15 @@ return {
     end
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    vim.diagnostic.config({
+        signs = {
+            text = {
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+            [vim.diagnostic.severity.HINT] = "󰠠 ",
+            },
+        },
+    })
   end,
 }

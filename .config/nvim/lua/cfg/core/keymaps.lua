@@ -8,4 +8,3 @@ local bufopts = { noremap = true, silent = true }
 -- Only non-leader keybindings and those not managed by which-key remain here
 
 -- Any keybindings that are not managed by which-key should be added here
-
