@@ -1,34 +1,31 @@
 return {
   "folke/noice.nvim",
+  commit = "7bfd942445fb63089b59f97ca487d605e715f155",
   event = "VeryLazy",
   dependencies = {
-    -- Niezbędne zależności
-    "MunifTanjim/nui.nvim",
-    -- Opcjonalne, ale zalecane dla powiadomień
-    "rcarriga/nvim-notify",
+    {"MunifTanjim/nui.nvim", commit = "de740991c12411b663994b2860f1a4fd0937c130"},
+    {"rcarriga/nvim-notify", commit = "8701bece920b38ea289b457f902e2ad184131a5d"},
   },
   opts = {
     lsp = {
-      -- Obsługa komunikatów LSP przez noice
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
     },
-    -- Konfiguracja widoków (presets)
+
     presets = {
-      bottom_search = true,    -- pasek wyszukiwania (/) na dole (klasycznie)
-      command_palette = true,  -- pasek komend (:) i menu na środku (popup)
-      long_message_to_split = true, -- długie wiadomości w nowym oknie
-      inc_rename = false,      -- wsparcie dla inc-rename.nvim (jeśli używasz)
-      lsp_doc_border = true,   -- ramka wokół dokumentacji LSP
+      bottom_search = true,
+      command_palette = true,
+      long_message_to_split = true,
+      inc_rename = false,
+      lsp_doc_border = true,
     },
-    -- Dodatkowe ustawienia UI
     views = {
       cmdline_popup = {
         position = {
-          row = "40%", -- ustawienie wysokości na ekranie
+          row = "40%",
           col = "50%",
         },
         size = {
@@ -39,7 +36,7 @@ return {
       popupmenu = {
         relative = "editor",
         position = {
-          row = "52%", -- menu podpowiedzi tuż pod paskiem komend
+          row = "52%",
           col = "50%",
         },
         size = {
@@ -47,7 +44,7 @@ return {
           height = 10,
         },
         border = {
-          style = "rounded", -- zaokrąglone rogi popupu
+          style = "rounded",
           padding = { 0, 1 },
         },
         win_options = {

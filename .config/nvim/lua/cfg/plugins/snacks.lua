@@ -1,5 +1,6 @@
 return {
   "folke/snacks.nvim",
+  tag = "v2.31.0",
   priority = 1000,
   lazy = false,
   opts = {
