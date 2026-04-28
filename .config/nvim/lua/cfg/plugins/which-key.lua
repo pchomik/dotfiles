@@ -17,11 +17,11 @@ return {
 
       -- File Explorer (e)
       { "<leader>e", group = "File Explorer..." },
-      { "<leader>ee", function() Snacks.explorer() end, desc = "Show File Explorer" },
-      { "<leader>ec", function() Snacks.explorer() end, desc = "Collapse Explorer" },
+      { "<leader>ee", "<cmd>NvimTreeToggle<CR>", desc = "Show File Explorer" },
+      { "<leader>ec", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse Explorer" },
       { "<leader>en", "<cmd>enew<CR>", desc = "New File" },
-      { "<leader>er", function() Snacks.explorer({ reveal = true }) end, desc = "Reveal file in Explorer" },
-      { "<leader>es", function() Snacks.explorer() end, desc = "Focus file Explorer" },
+      { "<leader>er", "<cmd>NvimTreeFindFile<CR>", desc = "Reveal file in Explorer" },
+      { "<leader>es", "<cmd>NvimTreeFocus<CR>", desc = "Focus file Explorer" },
 
       -- File Operations (f)
       { "<leader>f", group = "File operations..." },
