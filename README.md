@@ -44,25 +44,25 @@ This repository includes configurations for a variety of tools to enhance your t
 
 -   **Neovim:** A highly extensible, Vim-based text editor. The configuration includes a wide range of plugins to enhance functionality:
     -   **LSP:** Language Server Protocol support for intelligent code completion and diagnostics.
-    -   **Alpha:** A fast and fully programmable start screen.
     -   **Auto-session:** A session manager for Neovim.
     -   **Autopairs:** Inserts or deletes brackets, parens, quotes in pair.
-    -   **Bufferline:** A sleek and functional buffer line.
     -   **Colorizer:** A plugin for visualizing colors in your code.
     -   **Colorschema:** A collection of colorschemes.
     -   **Dressing:** A plugin to improve the default UI of Neovim.
     -   **Formatting:** A plugin for formatting your code.
-    -   **Indent-blankline:** A plugin to display indentation guides.
     -   **Linting:** A plugin for linting your code.
     -   **Lualine:** A fast and lightweight statusline.
+    -   **Mason:** A portable package manager for LSP servers, DAP servers, linters, and formatters.
+    -   **Noice:** A plugin for enhanced UI (cmdline, popupmenu, messages).
     -   **Cmp:** A completion engine for Neovim.
     -   **Tree:** A file explorer tree.
-    -   **Substitution:** A plugin for substitutions.
+    -   **Snacks:** A collection of small, quality-of-life plugins.
     -   **Surround:** A plugin for adding/changing/deleting surroundings of text.
     -   **Telescope:** A highly extendable fuzzy finder over lists.
+    -   **Todo-comments:** A plugin for highlighting and searching TODO comments.
     -   **Treesitter:** A parser generator tool and an incremental parsing library.
     -   **Trouble:** A pretty list for showing diagnostics, references, and more.
-    -   **Vim-maximizer:** A plugin to maximize and restore the current window.
+    -   **Vim-tmux-navigator:** A plugin for seamless navigation between Neovim and tmux splits.
     -   **Which-key:** A plugin to display a popup with possible keybindings.
 
 ## 📸 Examples
