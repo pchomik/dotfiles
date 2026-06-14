@@ -189,7 +189,12 @@ Now, let's apply the dotfiles configuration.
 
 ```shell
 cd dotfiles
-stow --ignore="README.md" --ignore="examples" -t ~/ .
+stow  -t ~/ -d eza .
+stow  -t ~/ -d git .
+stow  -t ~/ -d nvim .
+stow  -t ~/ -d starship .
+stow  -t ~/ -d tmux .
+stow  -t ~/ -d zsh .
 ```
 
 **Note:** If `stow` reports an error, it might be because a file that needs to be symlinked already exists in your home directory. In this case, you should **backup** the existing file(s) and then run the `stow` command again.
