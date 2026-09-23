@@ -37,3 +37,10 @@ update_tmux_window_name() {
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_tmux_window_name
 
+
+# opencode
+export PATH=/home/pawel/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/pawel/.bun/_bun" ] && source "/home/pawel/.bun/_bun"
+

@@ -17,8 +17,8 @@ function load_zinit() {
         atpull"%atclone" src"init.zsh"
     zinit light starship/starship
 
-    # Load fzf
-    zinit wait"0b" lucid light-mode for \
+    # Load fzf (synchronously - zle -F turbo scheduler is broken on this zsh)
+    zinit lucid light-mode for \
         id-as'fzf' \
         as"program" \
         from"gh-r" \
@@ -26,10 +26,10 @@ function load_zinit() {
         nocompile \
         @junegunn/fzf
 
-    zinit wait"0c" as"completion" light-mode lucid for \
+    zinit as"completion" light-mode lucid for \
         id-as'fzf-completion' mv'fzf-completion -> _fzf' https://github.com/junegunn/fzf/blob/v0.66.0/shell/completion.zsh
 
-    zinit wait"0d" lucid light-mode for \
+    zinit lucid light-mode for \
         id-as"fzf-keybindings" https://github.com/junegunn/fzf/blob/v0.66.0/shell/key-bindings.zsh
 
     # Load zoxide plugin
@@ -45,10 +45,17 @@ function load_zinit() {
 
     # Load eza plugin
     zinit ice as"program" from"gh-r" at"v0.23.4" \
-        pick"eza*/eza" \
-        mv"eza*/completions/zsh/_eza -> _eza" \
-        fpath"eza*/completions/zsh"
+        pick"eza*/eza"
     zinit light eza-community/eza
+
+    # Load eza completions (shipped in a separate release asset, not in the binary tarball)
+    zinit as"completion" light-mode lucid for \
+        id-as'eza-completion' \
+        from"gh-r" \
+        ver"v0.23.4" \
+        bpick"completions-0.23.4.tar.gz" \
+        mv"completions*/zsh/_eza -> _eza" \
+        @eza-community/eza
 
     # Add other zsh plugins
     zinit ice ver"0.8.0"
