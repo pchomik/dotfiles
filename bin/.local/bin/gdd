@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# gdd shim: uutils dd (Ubuntu 26.04) blocks on PTYs with iflag=nonblock,
+# which stalls fzf-tab's tab-completion until a second keypress.
+# See Aloxaf/fzf-tab issue #578. This shim sets O_NONBLOCK properly.
+import os
+import sys
+import fcntl
+
+if not any("nonblock" in a for a in sys.argv[1:]):
+    os.execv("/usr/bin/dd", ["dd"] + sys.argv[1:])
+
+try:
+    fd = sys.stdin.fileno()
+    old = fcntl.fcntl(fd, fcntl.F_GETFL)
+    fcntl.fcntl(fd, fcntl.F_SETFL, old | os.O_NONBLOCK)
+    try:
+        data = os.read(fd, 1 << 30)
+        sys.stdout.buffer.write(data)
+        sys.stdout.buffer.flush()
+    except BlockingIOError:
+        pass
+    finally:
+        fcntl.fcntl(fd, fcntl.F_SETFL, old)
+except Exception:
+    pass
