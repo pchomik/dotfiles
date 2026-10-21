@@ -9,4 +9,6 @@ function set_aliases() {
     alias ssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=1000 -o TCPKeepAlive=yes'
     alias scp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
     alias gen_pass='openssl rand -base64 16'
+    alias apt='nala'
+    alias sudo='sudo '
 }

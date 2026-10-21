@@ -22,6 +22,10 @@ increase_volume_small=Shift+Volume Up,Shift+Volume Up,Increase Volume by 1%
 mic_mute=Microphone Mute\tMeta+Volume Mute,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
 
+[krusader]
+_k_friendly_name=Krusader
+bring_main_window_to_top=,Meta+K,Bring Main Window to Top
+
 [ksmserver]
 Halt Without Confirmation=,,Shut Down Without Confirmation
 Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Lock Session
@@ -435,6 +439,10 @@ _launch=Alt+F2\tSearch
 
 [services][org.kde.kscreen.desktop]
 ShowOSD=Display
+
+[services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=
+OpenWithoutScreenshot=
 
 [services][systemsettings.desktop]
 _launch=Meta+S

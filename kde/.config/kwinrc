@@ -21,7 +21,9 @@ blurEnabled=false
 karouselEnabled=false
 krohnkiteEnabled=true
 kwin4_effect_geometry_changeEnabled=true
+kwin_effect_plasmazonesEnabled=false
 overviewEnabled=false
+translucencyEnabled[$d]
 
 [Round-Corners]
 ActiveOutlinePalette=14
@@ -49,6 +51,8 @@ binaryTreeLayoutOrder=3
 cascadeLayoutOrder=0
 columnsLayoutOrder=0
 floatingLayoutOrder=0
+ignoreClass=krunner,yakuake,spectacle,kded5,xwaylandvideobridge,plasmashell,ksplashqml,org.kde.plasmashell,org.kde.polkit-kde-authentication-agent-1,org.kde.kruler,kruler,kwin_wayland,ksmserver-logout-greeter,notify,kcalc
+ignoreTitle=notify,KCalc
 monocleLayoutOrder=1
 monocleMaximize=false
 noTileBorder=true
@@ -67,6 +71,14 @@ tileLayoutOrder=2
 
 [TabBox]
 HighlightWindows=false
+LayoutName=modern_informative
+
+[TabBoxAlternative]
+LayoutName=modern_informative
+
+[Tiling][39df82aa-5fe2-43d6-b0d0-1078c3051dc6][076dc188-0e87-4ded-bc20-3b39d0724896]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][39df82aa-5fe2-43d6-b0d0-1078c3051dc6][86f0b3b4-ba2f-42d1-83d5-5b5b13b292f2]
 padding=4
@@ -92,11 +104,19 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][db96effa-37d1-4836-b9c6-e3a3d106bbab][076dc188-0e87-4ded-bc20-3b39d0724896]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][db96effa-37d1-4836-b9c6-e3a3d106bbab][86f0b3b4-ba2f-42d1-83d5-5b5b13b292f2]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][db96effa-37d1-4836-b9c6-e3a3d106bbab][9750361a-e937-45de-89dc-93535391e7fe]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][f7f049c0-e322-4fa3-9e10-fa6a1e031b82][076dc188-0e87-4ded-bc20-3b39d0724896]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 

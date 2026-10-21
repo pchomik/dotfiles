@@ -5,6 +5,7 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
+ItemGeometries-0x0=
 ItemGeometries-1920x1080=
 ItemGeometries-2048x1152=
 ItemGeometries-2560x1440=
@@ -49,9 +50,17 @@ popupHeight=451
 popupWidth=560
 
 [Containments][2][Applets][22][Configuration][Appearance]
+autoFontAndSize=false
+fontFamily=PT Mono
+fontSize=14
+fontStyleName=Regular
 fontWeight=400
 showDate=true
 showSeconds=false
+
+[Containments][2][Applets][22][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
 
 [Containments][2][Applets][23]
 immutability=1
@@ -100,6 +109,12 @@ plugin=com.github.tilorenz.compact_pager
 popupHeight=400
 popupWidth=560
 
+[Containments][2][Applets][35][Configuration][Appearance]
+borderRadius=16
+fontFamily=PT Mono
+fontSize=12
+fontSizeChecked=true
+
 [Containments][2][Applets][35][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
@@ -107,6 +122,7 @@ DialogWidth=810
 [Containments][2][Applets][35][Configuration][General]
 currentDesktopSelected=ShowDesktop
 displayedText=Number
+forceLayout=Compact
 showOnlyCurrentScreen=true
 showWindowOutlines=false
 
@@ -166,6 +182,9 @@ plugin=org.kde.plasma.manage-inputmethod
 [Containments][2][Applets][7][Applets][17]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
+
+[Containments][2][Applets][7][Applets][17][Configuration][General]
+currentDetailsTab=details
 
 [Containments][2][Applets][7][Applets][18]
 immutability=1

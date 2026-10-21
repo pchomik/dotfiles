@@ -1,14 +1,14 @@
-# 🚀 Dotfiles: Your Personalized Development Environment 🚀
+# Dotfiles: Your Personalized Development Environment
 
 Welcome to my personal collection of dotfiles! This repository is designed to help you set up a consistent and powerful development environment across multiple machines. With a single command, you can have your favorite tools configured and ready to go.
 
-## ✨ Features
+## Features
 
 -   **Consistent Configuration:** Keep your settings for `zsh`, `neovim`, `tmux`, and more in one place.
 -   **Easy Installation:** A simple setup process to get you up and running quickly.
 -   **Customizable:** Easily extend and modify the configurations to fit your needs.
 
-## 🛠️ Requirements
+## Requirements
 
 Before you begin, make sure you have the following tools installed:
 
@@ -16,29 +16,30 @@ Before you begin, make sure you have the following tools installed:
 -   `zsh`: A powerful and customizable shell.
 -   `git`: For version control.
 -   `neovim`: The best text editor!
--   `nodejs`: JavaScript runtime.
+-   `curl`: For downloading files and scripts.
 
-## 📦 Included Tools and Configurations
+## Included Tools and Configurations
 
 This repository includes configurations for a variety of tools to enhance your terminal and development experience.
 
 ### Shell Enhancements
 
--   **Starship:** A minimal, blazing-fast, and infinitely customizable prompt for any shell!
+-   **Starship:** A minimal, blazing-fast, and infinitely customizable prompt for any shell.
 -   **FZF:** A command-line fuzzy finder for quickly searching and locating files.
 -   **Eza:** A modern replacement for `ls` with more features and better defaults.
 -   **Bat:** A `cat` clone with syntax highlighting and Git integration.
 -   **Zoxide:** A smarter `cd` command that learns your habits.
 -   **TLDR:** Collaborative cheatsheets for console commands.
+-   **Btop:** A resource monitor that displays usage and stats for processor, memory, disks, network and processes.
+
+Most CLI tools above are automatically installed and managed by [mise](https://mise.jdx.dev/) on first shell startup.
 
 ### Development Tools
 
--   **Bun:** A fast all-in-one JavaScript runtime, bundler, transpiler, and package manager.
--   **Go:** A statically typed, compiled programming language designed at Google.
--   **NVM:** Node Version Manager for managing multiple active Node.js versions.
--   **Pyenv:** Python Version Management for switching between multiple Python versions.
 -   **Tmux:** A terminal multiplexer for managing multiple terminal sessions.
 -   **Git:** A distributed version control system.
+-   **Mise:** A polyglot tool version manager and task runner that installs most of the CLI tools in this dotfiles setup, including Node.js.
+-   **Pyenv:** Python Version Management for switching between multiple Python versions.
 
 ### Editor Configuration
 
@@ -65,7 +66,7 @@ This repository includes configurations for a variety of tools to enhance your t
     -   **Vim-tmux-navigator:** A plugin for seamless navigation between Neovim and tmux splits.
     -   **Which-key:** A plugin to display a popup with possible keybindings.
 
-## 📸 Examples
+## Examples
 
 Here are some screenshots showcasing the configured tools in action.
 
@@ -89,45 +90,27 @@ Here are some screenshots showcasing the configured tools in action.
 <img src="examples/eza.png" width="600px">
 </details>
 
-## ⚙️ Installation Steps
+## Installation Steps
 
 ### 1. Install Dependencies
 
 First, let's get all the necessary packages installed on your system.
 
-<details>
-<summary>For Ubuntu/Debian</summary>
-
 ```shell
-sudo apt update && sudo apt install -y stow zsh git neovim python3-neovim tmux tree tldr
+sudo apt update && sudo apt install -y stow zsh git neovim tmux tree curl kitty
 ```
 
-</details>
-
-<details>
-<summary>For Fedora</summary>
+Then install `mise`:
 
 ```shell
-sudo dnf install -y stow zsh git neovim python3-neovim tmux tree tldr
+sudo add-apt-repository -y ppa:jdxcode/mise
+sudo apt update
+sudo apt install -y mise
 ```
 
-</details>
+### 2. Install `neovim`
 
-### 2. Install `nvm` and `NodeJS` 📦
-
-We use `nvm` to manage Node.js versions.
-
-```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-nvm install --lts
-```
-
-### 3. Install `neovim` 📝
-
-Choose the installation method that best suits your operating system.
-
-<details>
-<summary>For Ubuntu</summary>
+If the version from step 1 is not recent enough, you can install the latest version from the unstable PPA:
 
 ```shell
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
@@ -135,71 +118,50 @@ sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
 ```
 
-</details>
+### 3. Install Vicinae
 
-<details>
-<summary>For Debian</summary>
-
-```shell
-sudo apt update
-sudo apt install make gcc ripgrep unzip git xclip curl
-
-# Install nvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-sudo rm -rf /opt/nvim-linux-x86_64
-sudo mkdir -p /opt/nvim-linux-x86_64
-sudo chmod a+rX /opt/nvim-linux-x86_64
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-
-# Make it available
-sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
-```
-
-</details>
-
-<details>
-<summary>For Fedora</summary>
+Install the Vicinae application launcher locally:
 
 ```shell
-sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
+curl -fsSL https://vicinae.com/install | bash -s -- --prefix ~/.local
 ```
 
-</details>
-
-<details>
-<summary>From Source</summary>
+Enable the background service so Vicinae starts automatically:
 
 ```shell
-sudo apt remove neovim
-sudo apt autoremove
-sudo apt install ninja-build gettext cmake unzip curl
-git clone https://github.com/neovim/neovim
-cd neovim
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-cd build
-cpack -G DEB
-sudo dpkg -i --force-overwrite nvim-linux-x86_64.deb
+systemctl --user enable vicinae.service
+systemctl --user start vicinae.service
 ```
 
-</details>
-
-### 4. Apply Configuration 🪄
+### 4. Apply Configuration
 
 Now, let's apply the dotfiles configuration.
 
 ```shell
 cd dotfiles
+stow  -t ~/ -d bin .
 stow  -t ~/ -d eza .
+stow  -t ~/ -d fontconfig .
 stow  -t ~/ -d git .
+stow  -t ~/ -d kde .
+stow  -t ~/ -d kitty .
+stow  -t ~/ -d mise .
 stow  -t ~/ -d nvim .
 stow  -t ~/ -d starship .
 stow  -t ~/ -d tmux .
+stow  -t ~/ -d vicinae .
 stow  -t ~/ -d zsh .
 ```
 
 **Note:** If `stow` reports an error, it might be because a file that needs to be symlinked already exists in your home directory. In this case, you should **backup** the existing file(s) and then run the `stow` command again.
 
-### 5. Configure `git` ✍️
+After stowing, optionally rebuild the font cache for any custom fonts to be recognized:
+
+```shell
+fc-cache -fv
+```
+
+### 5. Configure `git`
 
 Create a `.gitcustom.inc` file to store your personal `git` information.
 
@@ -215,7 +177,7 @@ name = Your Name
 email = your.email@gmail.com
 ```
 
-### 6. Change Your Shell to `zsh` 🐚
+### 6. Change Your Shell to `zsh`
 
 Finally, let's make `zsh` your default shell.
 
@@ -223,10 +185,36 @@ Finally, let's make `zsh` your default shell.
 chsh -s $(which zsh)
 ```
 
+If `chsh` reports an error or the shell does not change after re-logging in, the shell path might not be in `/etc/shells`. In that case, use this alternative:
+
+```shell
+sudo usermod --shell $(which zsh) $USER
+```
+
+Verify the change in the system database:
+
+```shell
+getent passwd $USER
+```
+
+Then **log out completely** (end your desktop/session, not just close the terminal) and log back in. To confirm the new session is using `zsh`:
+
+```shell
+echo $SHELL
+```
+
+If you want to switch to `zsh` immediately without logging out, run:
+
+```shell
+exec zsh
+```
+
+**Note:** On the first launch of `zsh`, [mise](https://mise.jdx.dev/) will automatically install all configured tools (including Node.js, Starship, FZF, and others). This may take a few minutes.
+
 <br>
 
 ---
 
 <br>
 
-<div align="center">Enjoy your beautifully configured and efficient terminal! 🎉</div>
+<div align="center">Enjoy your beautifully configured and efficient terminal!</div>

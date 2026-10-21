@@ -1,0 +1,84 @@
+# Colors taken from KDE Breeze Dark (/usr/share/color-schemes/BreezeDark.colors).
+# Breeze has no border/magenta/cyan entries; those are picked to fit the palette.
+
+[meta]
+name = "Breeze Dark"
+description = "Breeze Dark"
+variant = "dark"                              # "dark" | "light": impacts what icon to show in some circumstances
+inherits = "vicinae-dark"
+icon = "icons/theme-name.png"                 # Optional: path to theme icon (relative to the theme directory it is placed in if not an absolute path)
+
+[colors.core]
+accent = "#3daee9"
+accent_foreground = "#fcfcfc"
+background = "#202326"
+foreground = "#fcfcfc"
+secondary_background = "#292c30"
+border = "#31363b"
+
+[colors.main_window]
+border = "#31363b"
+footer = { background = "colors.core.secondary_background" }
+
+[colors.settings_window]
+border = "#31363b"
+
+[colors.accents]
+blue = "#1d99f3"
+green = "#27ae60"
+magenta = "#9b59b6"
+orange = "#f67400"
+red = "#da4453"
+yellow = "#fdbc4b"
+cyan = "#1abc9c"
+purple = "#9b59b6"
+
+# For now, shortcuts cannot have their own dedicated background
+[colors.shortcut]
+border = "colors.core.border"
+
+[colors.text]
+default = "colors.core.foreground"
+muted = "#a1a9b1"
+danger = "#da4453"
+success = "#27ae60"
+placeholder = "#7f8c8d"
+selection = { background = "#3daee9", foreground = "#fcfcfc" }
+
+[colors.text.links]
+default = "#1d99f3"
+visited = "#9b59b6"
+
+[colors.input]
+border = "#31363b"
+border_focus = "#3daee9"
+border_error = "#da4453"
+
+[colors.button.primary]
+background = "#292c30"
+foreground = "#fcfcfc"
+hover = { background = "#bb292c30" }
+focus = { outline = "colors.core.accent" }
+
+[colors.list.item.hover]
+foreground = "#fcfcfc"
+secondary_foreground = "#fcfcfc"
+
+# Format is #AARRGGBB; b3 = ~70% opacity.
+[colors.list.item.selection]
+background = { name = "colors.core.accent", opacity = 0.2 }
+foreground = "#fcfcfc"
+secondary_background = { name = "colors.core.accent", opacity = 0.2 }
+secondary_foreground = "#fcfcfc"
+
+[colors.grid.item]
+background = "#141618"
+hover = { outline = "#fcfcfc" }
+selection = { outline = "#fcfcfc" }
+
+[colors.scrollbars]
+background = "#31363b"
+
+[colors.loading]
+bar = "#3daee9"
+spinner = "#fcfcfc"
