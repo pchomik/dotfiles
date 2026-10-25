@@ -17,7 +17,7 @@ secondary_background = "#292c30"
 border = "#31363b"
 
 [colors.main_window]
-border = "#31363b"
+border = "#2b8759"
 footer = { background = "colors.core.secondary_background" }
 
 [colors.settings_window]

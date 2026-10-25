@@ -28,6 +28,15 @@
    "telemetry": {
       "system_info": false
    },
+   "launcher_window": {
+      "rounding": 12,
+      "client_side_decorations": {
+         "border_width": 3
+      },
+      "compact_mode": {
+         "enabled": true
+      }
+   },
    "favorites": [
       "applications:org.kde.dolphin",
       "applications:kitty",
