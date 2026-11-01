@@ -40,6 +40,7 @@ Most CLI tools above are automatically installed and managed by [mise](https://m
 -   **Git:** A distributed version control system.
 -   **Mise:** A polyglot tool version manager and task runner that installs most of the CLI tools in this dotfiles setup, including Node.js.
 -   **Pyenv:** Python Version Management for switching between multiple Python versions.
+-   **Pi:** A minimal, extensible terminal coding agent. See [Pi (pi-agent)](#pi-pi-agent).
 
 ### Editor Configuration
 
@@ -65,6 +66,23 @@ Most CLI tools above are automatically installed and managed by [mise](https://m
     -   **Trouble:** A pretty list for showing diagnostics, references, and more.
     -   **Vim-tmux-navigator:** A plugin for seamless navigation between Neovim and tmux splits.
     -   **Which-key:** A plugin to display a popup with possible keybindings.
+
+### Pi (pi-agent)
+
+[Pi](https://pi.dev) is a terminal coding agent. This repository stores its global agent rules in `pi/.pi/agent/AGENTS.md`. Stowing the `pi` package links the file to `~/.pi/agent/AGENTS.md`, where Pi reads it for every project.
+
+-   **Install:** Run the installer or install with npm (Node.js 22.19 or newer is required):
+
+    ```shell
+    curl -fsSL https://pi.dev/install.sh | sh
+    # or
+    npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+    ```
+
+-   **Run:** Start Pi inside a project directory with `pi`.
+-   **Update:** Run `pi update` (installer install only).
+-   **Global rules:** Edit `pi/.pi/agent/AGENTS.md` in this repository. Pi loads it as project instructions in every session.
+-   **Customization:** Pi supports extensions, skills, prompt templates, and themes. See the [documentation](https://github.com/earendil-works/pi).
 
 ## Examples
 
@@ -147,6 +165,7 @@ stow  -t ~/ -d kde .
 stow  -t ~/ -d kitty .
 stow  -t ~/ -d mise .
 stow  -t ~/ -d nvim .
+stow  -t ~/ -d pi .
 stow  -t ~/ -d starship .
 stow  -t ~/ -d tmux .
 stow  -t ~/ -d vicinae .
